@@ -43,3 +43,15 @@ print(carros_docs.inserted_ids)
 # Mostrar o primeiro documento na coleção carros
 primeiro_carro = colecaoCarros.find_one()
 print(primeiro_carro)
+
+# Mostrar todos documentos
+for carro in colecaoCarros.find():
+    print(carro)
+
+# Mostrar alguns campos (marca e modelo)
+for carro in colecaoCarros.find({}, {"_id":0, "Marca":1, "Modelo":1}):
+    print(carro)
+
+# Excluir uma coluna
+for carro in colecaoCarros.find({}, {"Modelo":0}):
+    print(carro)
