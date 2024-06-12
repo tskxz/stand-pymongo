@@ -35,6 +35,11 @@ carros_americanos = [
 ]
 
 carros_docs = colecaoCarros.insert_many(carros_americanos)
-
+"""
 # Mostrar ids dos carros
 print(carros_docs.inserted_ids)
+"""
+
+# Mostrar o primeiro documento na coleção carros
+primeiro_carro = colecaoCarros.find_one()
+print(primeiro_carro)
