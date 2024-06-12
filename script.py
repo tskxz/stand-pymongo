@@ -20,7 +20,21 @@ if "carros" in collist:
 
 # Inserir um documento na coleção carros
 hellcat = {"Marca": "Dodge", "Modelo": "Challenger", "Preco":30.000}
-hellcat_documento = colecaoCarros.insert_one(hellcat)
 
-# Nistrar o id do documento do carro hellcat
+"""
+# Mostrar o id do documento do carro hellcat
+hellcat_documento = colecaoCarros.insert_one(hellcat)
 print(hellcat_documento.inserted_id)
+"""
+
+# Inserir vários documentos na coleção carros
+carros_americanos = [
+    {"Marca": "Ford", "Modelo": "Mustang", "Preco":30.920},
+    {"Marca": "Chevrolet", "Modelo": "Camaro", "Preco":40.100},
+    {"Marca": "Cadillac", "Modelo": "CT4-V Blackwing", "Preco":62.000}
+]
+
+carros_docs = colecaoCarros.insert_many(carros_americanos)
+
+# Mostrar ids dos carros
+print(carros_docs.inserted_ids)
