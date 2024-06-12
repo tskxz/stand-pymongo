@@ -55,3 +55,16 @@ for carro in colecaoCarros.find({}, {"_id":0, "Marca":1, "Modelo":1}):
 # Excluir uma coluna
 for carro in colecaoCarros.find({}, {"Modelo":0}):
     print(carro)
+
+# Filtrar o resultado, ver o documento com a marca Ford
+query = {"Marca": "Ford"}
+documento_query = colecaoCarros.find(query)
+for carro in documento_query:
+    print(carro)
+
+
+# Mostrar o resultado, ver documento com o preco maior que 60 mil
+query2 = {"Preco": {"$gt":60}}
+documento_query2 = colecaoCarros.find(query2)
+for carro in documento_query2:
+    print(carro)
