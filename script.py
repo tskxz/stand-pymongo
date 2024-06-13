@@ -94,3 +94,6 @@ print(carros_apagados.deleted_count, " documentos apagados")
 # Apagar todos documentos de uma colecao
 todos_carros_apagados = colecaoCarros.delete_many({})
 print(todos_carros_apagados.deleted_count, " documentos apagados")
+
+# Apagar colecao
+colecaoCarros.drop()
