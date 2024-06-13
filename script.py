@@ -105,3 +105,8 @@ colecaoCarros.update_one(minhaquery, novosvalores)
 # mostrar todos carros
 for x in colecaoCarros.find():
     print(x)
+
+minhaquery2 = {"Modelo": "Camaro_Editado"}
+novosvalores2 = {"$set":{"Modelo": "Camaro :D"}}
+x = colecaoCarros.update_many(minhaquery2, novosvalores2)
+print(x.modified_count, "documentos atualizados.")
