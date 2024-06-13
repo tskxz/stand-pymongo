@@ -68,3 +68,15 @@ query2 = {"Preco": {"$gt":60}}
 documento_query2 = colecaoCarros.find(query2)
 for carro in documento_query2:
     print(carro)
+
+# Ordenação pelo nome da marca
+print("===== ORDENACAO PELO MARCA =====")
+carros_ordenados = colecaoCarros.find().sort("Marca")
+for carro in carros_ordenados:
+    print(carro)
+
+# Ordenação reversa pelo nome da marca
+print("===== ORDENACAO REVERSA PELA MARCA =====")
+carros_ordenados_inversa = colecaoCarros.find().sort("Marca", -1)
+for carro in carros_ordenados_inversa:
+    print(carro)
