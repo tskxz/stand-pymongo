@@ -92,8 +92,16 @@ carros_apagados = colecaoCarros.delete_many(apagar_carros_ford)
 print(carros_apagados.deleted_count, " documentos apagados")
 
 # Apagar todos documentos de uma colecao
-todos_carros_apagados = colecaoCarros.delete_many({})
-print(todos_carros_apagados.deleted_count, " documentos apagados")
+#todos_carros_apagados = colecaoCarros.delete_many({})
+#print(todos_carros_apagados.deleted_count, " documentos apagados")
 
 # Apagar colecao
-colecaoCarros.drop()
+#colecaoCarros.drop()
+print("===== Atualizar modelo camaro =====")
+minhaquery = {"Modelo": "Camaro"}
+novosvalores = {"$set": {"Modelo":"Camaro_Editado"}}
+colecaoCarros.update_one(minhaquery, novosvalores)
+
+# mostrar todos carros
+for x in colecaoCarros.find():
+    print(x)
