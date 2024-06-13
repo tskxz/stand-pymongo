@@ -80,3 +80,8 @@ print("===== ORDENACAO REVERSA PELA MARCA =====")
 carros_ordenados_inversa = colecaoCarros.find().sort("Marca", -1)
 for carro in carros_ordenados_inversa:
     print(carro)
+
+# Apagar documento com a marca especifica
+# Atencao, se a query encontra mais que um documento, apenas o primeiro documento vai ser apagado
+apagar_cadillac = {"Marca": "Cadillac"}
+colecaoCarros.delete_one(apagar_cadillac)
